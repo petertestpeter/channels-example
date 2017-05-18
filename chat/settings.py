@@ -54,8 +54,19 @@ TEMPLATES = (
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# DATABASES = {
+#     # 'default': dj_database_url.config(default="postgres:///channels-example", conn_max_age=500)
+#     'default': dj_database_url.config(default="postgres://localhost:5432", conn_max_age=500)
+# }
 DATABASES = {
-    'default': dj_database_url.config(default="postgres:///channels-example", conn_max_age=500)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'demo',
+        'USER': 'zhangzhiliang',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = (
